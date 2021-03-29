@@ -1,7 +1,8 @@
 import { useState } from "react"
-import { appendToLoacalStorage, getSearchResult} from "../service"
+import { appendToLocalStorage, getSearchResult} from "../service"
+import { getPreviousSearches } from "../service";
 
-const Search = ({ setSearchResult,setLoading  }) => {
+const Search = ({ setSearchResult,setLoading, setPreviousSearches  }) => {
     const [searchInput, setSearchInput] = useState({})
     return (
         <div>
@@ -9,7 +10,8 @@ const Search = ({ setSearchResult,setLoading  }) => {
             <button onClick={() => {
                 setLoading(true)
                 getSearchResult(searchInput).then(res => {
-                    appendToLoacalStorage("history", searchInput)
+                    appendToLocalStorage("history", searchInput)
+                    setPreviousSearches(getPreviousSearches("history"))
                     setSearchResult(res.data)
                     setLoading(false)
                 })

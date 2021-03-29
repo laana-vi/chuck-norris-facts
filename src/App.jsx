@@ -9,12 +9,13 @@ const App = () => {
   const [previousSearches, setPreviousSearches] = useState([])
 
   useEffect(() => {
-    setPreviousSearches(getPreviousSearches())
-  }, [])
+    setPreviousSearches(getPreviousSearches("history"))
+  }, [setPreviousSearches])
+
 
   return (
     <div className="App">
-      <Search setSearchResult={setSearchResult} setLoading={setLoading} />
+      <Search setSearchResult={setSearchResult} setLoading={setLoading} setPreviousSearches={setPreviousSearches} />
       {loading ? <Loading /> : console.log(searchResult)}
       {console.log(previousSearches)}
     </div>
