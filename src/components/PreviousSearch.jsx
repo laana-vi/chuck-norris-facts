@@ -1,4 +1,4 @@
-import { removeFromLocalStorage } from "./service"
+import { removeFromLocalStorage } from "../service"
 
 const PreviousSearch = ({search, setSearchInput, setPreviousSearches}) => {
     return (

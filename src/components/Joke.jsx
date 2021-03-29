@@ -1,11 +1,10 @@
-const Joke = ({joke}) => {
+import { Link } from "react-router-dom"
+const Joke = ({ joke }) => {
     return (
-        <div onClick={() => {
-            console.log(joke.id)
-        }}>
-            <img src={joke?.icon_url} alt=""/>
+        <Link to={`/details/${joke?.id}`}>
+            <img src={joke?.icon_url} alt="" />
             <h3>{joke?.value}</h3>
-        </div>
+        </Link>
     )
 }
 
