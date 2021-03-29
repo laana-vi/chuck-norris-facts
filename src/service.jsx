@@ -15,6 +15,7 @@ export const getSearchResult = (query) => {
 export const getPreviousSearches = (key) => {
     let searches = localStorage.getItem(key)
     searches = searches?.split(',')
+    searches = [...new Set(searches)]
     if( searches?.length === 11){
         searches?.shift()
         localStorage.setItem(key, searches)
@@ -22,9 +23,18 @@ export const getPreviousSearches = (key) => {
     return searches
 }
 
+export const removeFromLocalStorage = (key,data) => {
+    let searches = localStorage.getItem(key)
+    searches = searches?.split(',')
+    searches = [...new Set(searches)]
+    searches.splice(searches.indexOf(data), 1)
+    localStorage.setItem(key, searches)
+    return searches
+}
+
 export const appendToLocalStorage = (key, data) => {
     let previous = localStorage.getItem(key)
-    if (previous === null) {
+    if (previous === null || previous === "") {
         localStorage.setItem(key, [data])
     }
     else {

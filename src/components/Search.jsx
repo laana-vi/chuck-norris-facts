@@ -1,20 +1,22 @@
-import { useState } from "react"
-import { appendToLocalStorage, getSearchResult} from "../service"
+import { appendToLocalStorage, getSearchResult } from "../service"
 import { getPreviousSearches } from "../service";
 
-const Search = ({ setSearchResult,setLoading, setPreviousSearches  }) => {
-    const [searchInput, setSearchInput] = useState({})
+const Search = ({ setSearchResult, setLoading, setPreviousSearches, searchInput, setSearchInput }) => {
     return (
         <div>
-            <input type="search" placeholder="Search..." onChange={(e) => { setSearchInput(e.target.value) }} />
+            <input type="text" placeholder="Search..." value={searchInput} onChange={(e) => { setSearchInput(e.target.value) }} />
             <button onClick={() => {
-                setLoading(true)
+                searchInput !== "" &&
+                    setLoading(true)
                 getSearchResult(searchInput).then(res => {
                     appendToLocalStorage("history", searchInput)
                     setPreviousSearches(getPreviousSearches("history"))
-                    setSearchResult(res.data)
+                    setSearchResult(res.data.result)
+
+                    setSearchInput("")
                     setLoading(false)
                 })
+
             }}>Search</button>
         </div>
     )
