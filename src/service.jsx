@@ -29,6 +29,9 @@ export const removeFromLocalStorage = (key,data) => {
     searches = [...new Set(searches)]
     searches.splice(searches.indexOf(data), 1)
     localStorage.setItem(key, searches)
+    if(searches.length===0){
+        localStorage.removeItem(key)
+    }
     return searches
 }
 
