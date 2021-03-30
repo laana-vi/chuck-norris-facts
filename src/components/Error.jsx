@@ -1,8 +1,10 @@
+import { StyledError } from "./styled/StyledError"
+
 const Error = ({error}) => {
     return (
-        <div>
+        <StyledError error={error}>
             <p>{error}</p>
-        </div>
+        </StyledError>
     )
 }
 export default Error

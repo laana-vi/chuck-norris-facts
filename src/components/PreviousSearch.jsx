@@ -1,13 +1,15 @@
 import { removeFromLocalStorage } from "../service"
+import { StyledPreviousSearch } from "./styled/StyledPreviousSearch"
+import { FaRegTimesCircle } from "react-icons/fa";
 
 const PreviousSearch = ({search, setSearchInput, setPreviousSearches}) => {
     return (
-        <div>
+        <StyledPreviousSearch>
             <p onClick={() => setSearchInput(search)}>{search}</p>
             <button onClick={() => {
                 setPreviousSearches(removeFromLocalStorage("history", search))
-            }}>X</button>
-        </div>
+            }}><FaRegTimesCircle size={20} className="icon"></FaRegTimesCircle></button>
+        </StyledPreviousSearch>
     )
 }
 

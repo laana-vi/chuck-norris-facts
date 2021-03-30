@@ -9,7 +9,7 @@ justify-content: center;
 
     .search-input {
         font-family: 'Poppins', sans-serif;
-        font-size: 1.1em;
+        font-size: 1em;
         font-weight: 700;
         padding: 5px;
         margin-right: 10px;
@@ -19,7 +19,7 @@ justify-content: center;
     }
     .search-button {
         font-family: 'Poppins', sans-serif;
-        font-size: 1.1em;
+        font-size: 1em;
         padding: 4px 9px;
         border: none;
         border-radius: 5px;

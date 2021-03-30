@@ -3,10 +3,12 @@ import styled from "styled-components";
 export const StyledHome = styled.div`
 display: flex;
 justify-content: center;
+
 .home-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     background-color: transparent;
     height: 100%;
