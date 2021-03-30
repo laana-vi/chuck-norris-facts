@@ -17,12 +17,12 @@ const Home = ({ searchResult, setSearchResult }) => {
   const [randomJoke, setRandomJoke] = useState()
   const [error, setError] = useState()
   const [currentPage, setCurrentPage] = useState(1)
-  const [jokesPerPage] = useState(20)
+  const [jokesPerPage] = useState(30)
 
 
   let indexOfLastJoke = currentPage * jokesPerPage
   let indexOfFirstJoke = indexOfLastJoke - jokesPerPage
-  let currentJokes = searchResult.slice(indexOfFirstJoke, indexOfLastJoke)
+  let currentJokes = searchResult?.slice(indexOfFirstJoke, indexOfLastJoke)
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
@@ -31,7 +31,11 @@ const Home = ({ searchResult, setSearchResult }) => {
   }, [setPreviousSearches])
 
   useEffect(() => {
-    getRandomJoke().then(res => setRandomJoke(res.data))
+    setLoading(true)
+    getRandomJoke().then(res => {
+      setRandomJoke(res.data)
+      setLoading(false)
+    })
   }, [])
 
   return (
@@ -51,7 +55,7 @@ const Home = ({ searchResult, setSearchResult }) => {
             ?
             <Loading />
             :
-            <Jokes searchResult={currentJokes} jokesPerPage={jokesPerPage} totalJokes={searchResult.length} paginate={paginate} currentPage={currentPage} />}
+            <Jokes searchResult={currentJokes} jokesPerPage={jokesPerPage} totalJokes={searchResult?.length} paginate={paginate} currentPage={currentPage} />}
       </div>
     </StyledHome>
 

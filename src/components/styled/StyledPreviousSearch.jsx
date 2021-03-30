@@ -13,12 +13,15 @@ border-radius:5px;
 
 p:hover {
     cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: #f7fff7;
 }
 button {
     background:transparent;
     border: none;
     color: #f7fff7;
     margin-left: 5px;
+    outline: none;
 }
 button:hover {
     cursor: pointer;

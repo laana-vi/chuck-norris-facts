@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import { GlobalStyle } from "./components/styled/GlobalStyle"
 
 const App = () => {
-  const [searchResult, setSearchResult] = useState([])
+  const [searchResult, setSearchResult] = useState()
 
   return (
     <>

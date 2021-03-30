@@ -1,9 +1,11 @@
+import { StyledRandomJoke } from "./styled/StyledRandomJoke"
+
 const RandomJoke = ({ joke }) => {
     return (
-        <div>
+        <StyledRandomJoke joke={joke}>
             <img src={joke?.icon_url} alt="" />
             <h3>{joke?.value}</h3>
-        </div>
+        </StyledRandomJoke>
     )
 }
 

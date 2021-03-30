@@ -1,19 +1,35 @@
-Goal
-Create application that is able to add, store and display Chuck Norris facts using 
-https://api.chucknorris.io/ API. 
+# Chuck Norris Facts
 
-Pages 
+## About
+This is a app that is using the [https://api.chucknorris.io/](https://api.chucknorris.io/) API. It features a homepage, and joke detiled page.
 
-The app should have two pages:
+View live [here](https://bg-logger.netlify.app/)
 
-1.	Landing page 
-At the top of the page there should be search form which so you can search for Chuck Norris facts by specific keyword using https://api.chucknorris.io/jokes/search?query={query} endpoint.
-Bellow that form should be the list of previous searches (max last 10). 
-If the list (previous searches) is empty show random fact using https://api.chucknorris.io/jokes/random endpoint 
-2.	Single fact page 
-This page should display single fact details (icon & text). Since API response has ID of each fact, route should use that ID as router parameter e.g. “details/ S-oNfHo3wb5g“ 
 
-Instructions
+## Basic functionalities:
+- see one random joke if search history is empty
+- search history saved in LS that can be used again or removed
+- jokes list
+- detailed joke
+- pagination
 
-•	You are free to choose some framework, library or you can write everything in vanilla JS
-•	As we didn’t provide you with designs, try to make UI as best as you can and be free to make it on your 
+## Dependencies: 
+- Node.js v14.15.1
+- npm version 6.14.8
+
+## Technologies used: 
+- [axios](https://www.npmjs.com/package/axios)
+- [styled components](https://styled-components.com/)
+- [react-router-dom](https://reactrouter.com/web/guides/quick-start)
+- [react-icons](https://react-icons.github.io/react-icons/)
+
+## Downloading and Instalation
+- install Node.js and npm
+- clone the repo `git clone https://github.com/laana-vi/chuck-norris-facts.git`
+- go into directory client `cd norris`
+- run `npm install` to install dependencies
+- run `npm start` to start the app
+
+
+
+

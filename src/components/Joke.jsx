@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom"
+import { StyledJoke } from "./styled/StyledJoke"
 const Joke = ({ joke }) => {
 
     return (
-        <Link to={`/details/${joke?.id}`}>
-            <img src={joke?.icon_url} alt="" />
-            <h3>{joke?.value}</h3>
-        </Link>
+        <StyledJoke>
+            <Link className="link" to={`/details/${joke?.id}`}>
+                <h3>{joke?.value}</h3>
+            </Link>
+        </StyledJoke>
+
     )
 }
 

@@ -29,6 +29,7 @@ justify-content: center;
         display: flex;
         justify-content: center;
         align-items: center;
+        outline: none;
     } 
     .icon {
         color: #f7fff7;

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { useHistory, useParams } from "react-router"
+import { StyledDetailedJoke } from "./styled/StyledDetailedJoke"
+import { BiUndo } from "react-icons/bi";
 
 const DetailedJoke = ({ searchResult }) => {
     const [joke, setJoke] = useState([])
@@ -7,19 +9,17 @@ const DetailedJoke = ({ searchResult }) => {
     const history = useHistory()
 
     useEffect(() => {
-        setJoke(searchResult.filter(joke => joke.id === id))
+        setJoke(searchResult?.filter(joke => joke.id === id))
     }, [id, searchResult])
 
     return (
-        <div>
+        <StyledDetailedJoke>
             <button onClick={() => {
                 history.goBack();
-            }}>Back</button>
-            <div>
+            }}><BiUndo size={30}></BiUndo></button>
                 <img src={joke[0]?.icon_url} alt="" />
                 <h3>{joke[0]?.value}</h3>
-            </div>
-        </div>
+        </StyledDetailedJoke>
 
     )
 }
