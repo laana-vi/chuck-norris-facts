@@ -56,6 +56,7 @@ const Home = ({ searchResult, setSearchResult }) => {
             <Loading />
             :
             <Jokes searchResult={currentJokes} jokesPerPage={jokesPerPage} totalJokes={searchResult?.length} paginate={paginate} currentPage={currentPage} />}
+      
       </div>
     </StyledHome>
 

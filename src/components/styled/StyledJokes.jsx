@@ -13,4 +13,27 @@ max-width: 80%;
 box-sizing: border-box;
 box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
 visibility: ${({ searchResult }) => !searchResult && 'hidden'};
+
+.try-again {
+    max-width: 500px;
+}
+
+@media screen and (max-width: 520px){
+    .try-again {
+    max-width: 400px;
+}
+}
+
+@media screen and (max-width: 370px){
+    .try-again {
+    max-width: 300px;
+}
+}
+
+@media screen and (max-width: 370px){
+    .try-again {
+    max-width: 300px;
+}
+}
+
 `

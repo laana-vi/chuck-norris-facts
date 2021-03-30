@@ -30,9 +30,9 @@ const Pagination = ({ jokesPerPage, totalJokes, paginate, currentPage }) => {
 
     return (
         <StyledPagination>
-            <button onClick={() => {
+            {pageNumbers.length !== 0 && <button onClick={() => {
                 paginate(Math.ceil(1))
-            }}><FaAngleDoubleLeft></FaAngleDoubleLeft></button>
+            }}><FaAngleDoubleLeft></FaAngleDoubleLeft></button>}
             {currentPage !== 1 && <button onClick={() => {
                 paginate(currentPage - 1)
             }}><FaAngleLeft></FaAngleLeft></button>}
@@ -44,9 +44,9 @@ const Pagination = ({ jokesPerPage, totalJokes, paginate, currentPage }) => {
             {currentPage < Math.ceil(totalJokes / jokesPerPage) && pageNumbers.length !== 0 && <button onClick={() => {
                 paginate(currentPage + 1)
             }}><FaAngleRight></FaAngleRight></button>}
-            <button onClick={() => {
+            { pageNumbers.length !== 0 && <button onClick={() => {
                 paginate(Math.ceil(totalJokes / jokesPerPage))
-            }}><FaAngleDoubleRight></FaAngleDoubleRight></button>
+            }}><FaAngleDoubleRight></FaAngleDoubleRight></button>}
         </StyledPagination>
     )
 }
