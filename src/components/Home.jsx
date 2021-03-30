@@ -6,6 +6,7 @@ import Error from "./Error";
 import PreviousSearches from "./PreviousSearches";
 import { getPreviousSearches, getRandomJoke } from "../service";
 import RandomJoke from "./RandomJoke";
+import { StyledHome } from "./styled/StyledHome";
 
 
 const Home = ({ searchResult, setSearchResult }) => {
@@ -17,7 +18,7 @@ const Home = ({ searchResult, setSearchResult }) => {
   const [error, setError] = useState()
   const [currentPage, setCurrentPage] = useState(1)
   const [jokesPerPage] = useState(20)
- 
+
 
   let indexOfLastJoke = currentPage * jokesPerPage
   let indexOfFirstJoke = indexOfLastJoke - jokesPerPage
@@ -34,24 +35,26 @@ const Home = ({ searchResult, setSearchResult }) => {
   }, [])
 
   return (
-    <div>
-      
-      <Search setSearchResult={setSearchResult} setLoading={setLoading} setPreviousSearches={setPreviousSearches} searchInput={searchInput} setSearchInput={setSearchInput} setError={setError} />
-      <Error error={error} />
-      {
-        previousSearches.length === 0
-          ?
-          <RandomJoke joke={randomJoke} />
-          :
-          <PreviousSearches previousSearches={previousSearches} setSearchInput={setSearchInput} setPreviousSearches={setPreviousSearches} />
-      }
-      {
-        loading
-          ?
-          <Loading />
-          :
-          <Jokes searchResult={currentJokes} jokesPerPage={jokesPerPage} totalJokes={searchResult.length} paginate={paginate} currentPage={currentPage} />}
-    </div>
+    <StyledHome>
+      <div className="home-container">
+        <Search setSearchResult={setSearchResult} setLoading={setLoading} setPreviousSearches={setPreviousSearches} searchInput={searchInput} setSearchInput={setSearchInput} setError={setError} />
+        <Error error={error} />
+        {
+          previousSearches.length === 0
+            ?
+            <RandomJoke joke={randomJoke} />
+            :
+            <PreviousSearches previousSearches={previousSearches} setSearchInput={setSearchInput} setPreviousSearches={setPreviousSearches} />
+        }
+        {
+          loading
+            ?
+            <Loading />
+            :
+            <Jokes searchResult={currentJokes} jokesPerPage={jokesPerPage} totalJokes={searchResult.length} paginate={paginate} currentPage={currentPage} />}
+      </div>
+    </StyledHome>
+
   )
 }
 
