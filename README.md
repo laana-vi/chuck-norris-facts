@@ -3,7 +3,7 @@
 ## About
 This is a app that is using the [https://api.chucknorris.io/](https://api.chucknorris.io/) API. It features a homepage, and joke detiled page.
 
-View live [here](https://bg-logger.netlify.app/)
+View live [here](https://dazzling-tesla-35d4b7.netlify.app/)
 
 
 ## Basic functionalities:
